@@ -21,8 +21,8 @@ def contact(request):
             has_contacted = Contact.objects.all().filter(
                 listing_id=listing_id, user_id=user_id)
             if has_contacted:
-                messages.error(
-                    request, 'You have already made an inquiry for this listing')
+                print("Error")
+                messages.error(request, 'You have already made an inquiry for this listing')
                 return redirect('/listings/'+listing_id)
 
         contact = Contact(listing=listing, listing_id=listing_id, name=name,
